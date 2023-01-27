@@ -16,6 +16,8 @@
 		3F857B8129840A62005EB316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F857B7F29840A62005EB316 /* LaunchScreen.storyboard */; };
 		3F857B8929840ABC005EB316 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F857B8829840ABC005EB316 /* Information.swift */; };
 		3F857B8B29840AD0005EB316 /* ResultInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F857B8A29840AD0005EB316 /* ResultInformation.swift */; };
+		3FF9B38A29843C3F00A103FC /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9B38929843C3F00A103FC /* ContactTableViewCell.swift */; };
+		3FF9B38C29843E8600A103FC /* ContactManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9B38B29843E8600A103FC /* ContactManagerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		3F857B8229840A62005EB316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F857B8829840ABC005EB316 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		3F857B8A29840AD0005EB316 /* ResultInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultInformation.swift; sourceTree = "<group>"; };
+		3FF9B38929843C3F00A103FC /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		3FF9B38B29843E8600A103FC /* ContactManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManagerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +68,34 @@
 			children = (
 				3F857B7129840A61005EB316 /* AppDelegate.swift */,
 				3F857B7329840A61005EB316 /* SceneDelegate.swift */,
+				3FF9B38D298443A900A103FC /* Services */,
 				3F857B7529840A61005EB316 /* ViewController.swift */,
 				3F857B8829840ABC005EB316 /* Information.swift */,
 				3F857B8A29840AD0005EB316 /* ResultInformation.swift */,
 				3F857B7729840A61005EB316 /* Main.storyboard */,
+				3FF9B38929843C3F00A103FC /* ContactTableViewCell.swift */,
+				3F857B7A29840A61005EB316 /* ContactManager.xcdatamodeld */,
+				3FF9B38E298443E900A103FC /* Resources */,
+			);
+			path = ContactManager;
+			sourceTree = "<group>";
+		};
+		3FF9B38D298443A900A103FC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3FF9B38B29843E8600A103FC /* ContactManagerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3FF9B38E298443E900A103FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				3F857B7D29840A62005EB316 /* Assets.xcassets */,
 				3F857B7F29840A62005EB316 /* LaunchScreen.storyboard */,
 				3F857B8229840A62005EB316 /* Info.plist */,
-				3F857B7A29840A61005EB316 /* ContactManager.xcdatamodeld */,
 			);
-			path = ContactManager;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +173,9 @@
 				3F857B7229840A61005EB316 /* AppDelegate.swift in Sources */,
 				3F857B7C29840A61005EB316 /* ContactManager.xcdatamodeld in Sources */,
 				3F857B8929840ABC005EB316 /* Information.swift in Sources */,
+				3FF9B38A29843C3F00A103FC /* ContactTableViewCell.swift in Sources */,
 				3F857B7429840A61005EB316 /* SceneDelegate.swift in Sources */,
+				3FF9B38C29843E8600A103FC /* ContactManagerService.swift in Sources */,
 				3F857B8B29840AD0005EB316 /* ResultInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PN373JBXN5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ContactManager/Info.plist;
+				INFOPLIST_FILE = ContactManager/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -329,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PN373JBXN5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ContactManager/Info.plist;
+				INFOPLIST_FILE = ContactManager/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

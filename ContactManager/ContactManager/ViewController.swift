@@ -8,21 +8,39 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let url = URL(string: "https://randomuser.me/api/?results=10")
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
+    private let service = ContactManagerService()
+    private var contacts: [Information] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let decoder = JSONDecoder()
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            if let data = data, let information = try? decoder.decode(ResultInformation.self, from: data) {
-                print(information)
-                for i in information.results {
-                    print("NAME: \(i.name.first) \(i.name.last)")
-                }
+        service.getContacts { contacts in
+            self.contacts = contacts
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-        task.resume()
+    }
+}
+
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contacts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as! ContactTableViewCell
+        cell.nameLabel.text = contacts[indexPath.item].name.first
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected cell: \(indexPath.item)")
     }
 }

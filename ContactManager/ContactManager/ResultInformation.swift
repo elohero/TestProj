@@ -11,6 +11,3 @@ struct ResultInformation: Codable {
     var results: [Information]
 }
 
-
-
-
